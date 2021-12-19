@@ -1,2 +1,2 @@
 # TransparenceJS
- Transparence Javascript experiments repo
+Transparence Javascript experiments repo
