@@ -32,18 +32,21 @@ function addZero(n) {
 function setBgGreet(){
     let today = new Date(),
     hour = today.getHours();
-
-        if(hour < 12){
+        if (hour < 5){
+            //Dawn
+            
+            greeting.textContent = 'Try to get enough sleep'
+        } else if (hour < 12){
             //Morning
-            document.body.style.backgroundColor = "#22252f";
+            
             greeting.textContent = 'Good morning';
         } else if (hour < 18) {
             //Afternoon  
-            document.body.style.backgroundColor = "#11191f";
+            
             greeting.textContent = 'Good afternoon';
         } else {
             //Evening
-            document.body.style.backgroundColor = "#11191f";
+            
             greeting.textContent = 'Good evening';
         }
 

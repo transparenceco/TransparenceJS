@@ -1,38 +1,75 @@
+<!-- Based roughly on this video:
+https://www.youtube.com/watch?v=8MgpE2DTTKA -->
+
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/pico.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/feather-icons"></script>
-    <title>Transparence Javascript experiment repository</title>
+    <title>Transparence</title>
   </head>
-  <body class="container">
+  <body >
 
-    <nav>
-      <ul>
-        <li><img src="https://transparence.co/wp-content/uploads/2021/01/Transparence_Logo_white_s-300x71.png" width="200px"/></li>
-      </ul>
-    </nav>
 
+<section class="showcase" data-theme="dark">
     <header>
-      <hgroup>
-        <h2>Transparence Javascript experiment repository</h2>
-        <p>Everything cool and crazy that helps us <i>get there faster</i> code-wise.</p>
-      <hgroup>
+      <nav>
+        <ul>
+          <li><div class="logo"></div></li>
+        </ul>
+      </nav>
+
+      <div class="toggle"></div>
+      
     </header>
 
-    <main>
-      <h3>Transparence Javascript experiment repository</h3>
+      <video src="transvideo.mp4" muted loop autoplay></video> 
+      <div class="overlay"></div>
 
-    </main>
+      <div class="text">
+        <h1>Meet your new creative studio</h1>
+        <p>We help you bring your ideas to life.</p>
+        <a href="">Contact us</a>
+      </div>
+
+      <ul class="social">
+        <li><a href=""><i data-feather="instagram"></i></a></li>
+        <li><a href=""><i data-feather="linkedin"></i></a></li>
+        <li><a href=""><i data-feather="twitter"></i></a></li>
+      </ul>
+
+  </section>
+
+
+  <div class="menu">
+    <ul>
+      <li><a href="#">home</a></li>
+      <li><a href="#">news</a></li>
+      <li><a href="#">work</a></li>
+      <li><a href="#">contact</a></li>
+    </ul>
+  </div>
 
     <footer>
       <small>Copyright Transparence 2022.</small>
     </footer>
+  
+
+    <script>
+      const menuToggle = document.querySelector('.toggle')
+      const showcase = document.querySelector('.showcase')
+  
+      menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active')
+        showcase.classList.toggle('active')
+      })
+    </script>
 
   </body>
-  
+
   <script>
     feather.replace()
   </script>
