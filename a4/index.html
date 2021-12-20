@@ -6,35 +6,75 @@
     <!-- Pico.css (Classless version) -->
     <link rel="stylesheet" href="css/pico.classless.min.css">
     <link rel="stylesheet" href="css/style.css">
+
     <script src="https://unpkg.com/feather-icons"></script>
     <title>Transparence</title>
   </head>
 
   <body>
-    <!-- Header -->
-    <header>
-      <nav>
-        <ul>
-          <li><div class="logo"></div></li>
-        </ul>
-      </nav>
-    </header>
+    <div id="container" class="section"> 
+      <div class="circle"></div>
 
-    <!-- Main -->
-    <main>
-      <hgroup>
-        <i data-feather="code" width="80px" height="80px"></i>
-        <h1>Class-less example</h1>
-        <h2>Just a pure semantic HTML markup, without <code>.classes</code></h2>
-        <p>Although lacking in some styling options, this template offers the minimal elements to get any page started quick.</p>
-      </hgroup>
-    </main>
+      <!-- Header -->
+      <header>
+        <nav>
+          <ul>
+            <li><div class="logo"></div></li>
+          </ul>
+        </nav>
+      </header>
 
-    <!-- Footer -->
-    <footer>
-      <small>Copyright Transparence 2022.</small>
-    </footer>
+      <!-- Main -->
+      <main>
+        <hgroup>
+          <i data-feather="circle" width="80px" height="80px"></i>
+          <h1>Circle pointer</h1>
+          <h2>A cute little circle following the mouse around</h2>
+          <p>Thoughts?</p>
+        </hgroup>
+      </main>
+
+      <!-- Footer -->
+      <footer>
+        <small>Copyright Transparence 2022.</small>
+      </footer>
+    </div> 
 
   </body>
+
+  <script>var container = document.getElementById("container");
+    var circle = document.querySelector(".circle");
+    
+    TweenMax.set(".section", {
+      backgroundColor: function() {
+        return Math.random() * 0xffffff;
+      }
+    });
+    
+    TweenMax.set(circle, { scale: 0, xPercent: -50, yPercent: -50 });
+    
+    container.addEventListener("pointerenter", function(e) {
+      TweenMax.to(circle, 0.3, { scale: 1, opacity: 1 });
+      positionCircle(e);
+    });
+    
+    container.addEventListener("pointerleave", function(e) {
+      TweenMax.to(circle, 0.3, { scale: 0, opacity: 0 });
+      positionCircle(e);
+    });
+    
+    container.addEventListener("pointermove", function(e) {
+      positionCircle(e);
+    });
+    
+    function positionCircle(e) {
+      var rect = container.getBoundingClientRect();  
+      var relX = e.pageX - container.offsetLeft;
+      var relY = e.pageY - container.offsetTop;
+    
+      TweenMax.to(circle, 0.3, { x: relX, y: relY });
+    }
+    
+    </script>
   <script>feather.replace()</script>
 </html>
