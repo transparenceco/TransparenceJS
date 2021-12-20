@@ -1,4 +1,4 @@
-
+/* Base Theme */
 .logo {
     width: 240px;
     height: 61px;
@@ -19,3 +19,19 @@
         background-image: url(../assets/Transparence_Logo_white.png);
     }
 }
+
+/* Mouseball */
+  .circle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 0;
+    left: 0;
+    background: #3e3e3e;
+    border-radius: 80%;
+    backface-visibility: hidden;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  
+  

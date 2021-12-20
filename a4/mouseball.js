@@ -1,11 +1,11 @@
-var container = document.getElementById("container");
+var container = document.getElementById("window");
 var circle = document.querySelector(".circle");
 
-TweenMax.set(".section", {
-  backgroundColor: function() {
-    return Math.random() * 0xffffff;
-  }
-});
+// TweenMax.set(".section", {
+//   backgroundColor: function() {
+//     return Math.random() * 0xffffff;
+//   }
+// });
 
 TweenMax.set(circle, { scale: 0, xPercent: -50, yPercent: -50 });
 
