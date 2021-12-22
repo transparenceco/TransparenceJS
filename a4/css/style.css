@@ -6,11 +6,25 @@
     background-repeat: no-repeat;
 }
 
+/* Mouseball */
+.circle {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    top: 0;
+    left: 0;
+    border-radius: 80%;
+    backface-visibility: hidden;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
 /* Light mode */
 @media (prefers-color-scheme: light) {
     .logo {
         background-image: url(../assets/Transparence_Logo.png);
     }
+    .circle {background: #474747;}
 }
 
 /* Dark mode */
@@ -18,20 +32,6 @@
     .logo {
         background-image: url(../assets/Transparence_Logo_white.png);
     }
+    .circle {background: #cccccc7e;}
 }
 
-/* Mouseball */
-  .circle {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    top: 0;
-    left: 0;
-    background: #3e3e3e;
-    border-radius: 80%;
-    backface-visibility: hidden;
-    pointer-events: none;
-    opacity: 0.5;
-  }
-  
-  

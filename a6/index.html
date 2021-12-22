@@ -1,40 +1,76 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Pico.css (Classless version) -->
-    <link rel="stylesheet" href="css/pico.classless.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://unpkg.com/feather-icons"></script>
-    <title>Transparence</title>
-  </head>
+<html>
+    <body>
+        <canvas width="600" height="600"></canvas>
+        <script>
+            let canvas = document.querySelector('canvas');
+            let context = canvas.getContext('2d');
 
-  <body>
-    <!-- Header -->
-    <header>
-      <nav>
-        <ul>
-          <li><div class="logo"></div></li>
-        </ul>
-      </nav>
-    </header>
+            context.fillStyle = 'blue';
+            // context.fillRect(100,100, 400, 400);
 
-    <!-- Main -->
-    <main>
-      <hgroup>
-        <i data-feather="code" width="80px" height="80px"></i>
-        <h1>Class-less example</h1>
-        <h2>Just a pure semantic HTML markup, without <code>.classes</code></h2>
-        <p>Although lacking in some styling options, this template offers the minimal elements to get any page started quick.</p>
-      </hgroup>
-    </main>
+            context.lineWidth = 4;
+            context.beginPath();
+            context.rect(100,100,400,400);
+            // context.stroke();
+            
+            context.beginPath();
+            context.arc(300,300,100,0, Math.PI * 2);
+            // context.stroke();
+            const width = 60;
+            const height = 60;
+            const gap = 20;
+            let x,y;
 
-    <!-- Footer -->
-    <footer>
-      <small>Copyright Transparence 2022.</small>
-    </footer>
+            for (let i = 0; i < 5; i++) { 
+                for (let j = 0; j < 5; j++){
 
-  </body>
-  <script>feather.replace()</script>
+                 x = 100 + ( width + gap ) * i;
+                 y = 100 + ( height + gap ) * j;
+
+                context.beginPath();
+                context.rect(x,y,width,height);
+                context.stroke();
+
+                    
+                    if (Math.random() > 0.5) {
+
+                        context.beginPath();
+                        context.rect(x+8, y+8, width-16, height-16);
+                        context.stroke();
+                    }
+
+                }
+
+            }
+
+
+
+             year = 2042;
+            let nextYear = year +1;
+            let dinner = 'pasta';
+            let sentence = 'Tonight, dinner will be ' + dinner;
+
+            function saySomething(param){
+
+                console.log(param);
+
+            }
+
+    
+            saySomething(sentence)
+
+            function add(a,b){
+              return  a+b;
+            }
+
+            let result = add(5,7);
+            console.log(result)
+
+            let multiply = (a,b) => {
+                return a * b
+            }
+
+            console.log (multiply(5,7));
+        </script>
+    </body>
 </html>
