@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Pico.css (Classless version) -->
+    <link rel="stylesheet" href="css/pico.classless.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Smooth page transitioning using BarbaJS</title>
+  </head>
+
+  <body data-barba="wrapper">
+
+
+    <!-- Header -->
+    <header>
+      <nav>
+        <ul>
+          <li><div class="logo"></div></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main -->
+    <main data-barba="container" data-barba-namespace="home">
+      <hgroup>
+        <i data-feather="screen" width="80px" height="80px"></i>
+        <h1>The third page</h1>
+        <h2>That was smooth, no?</h2>
+      </hgroup>
+      <p><a href="index.html">Go to the first page</a></p>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <small>Copyright Transparence 2022.</small>
+    </footer>
+
+        <!-- GSAP -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js"></script>
+        <!-- BarbaJS -->
+        <script src="https://unpkg.com/@barba/core"></script> 
+        <script src="barba.js"></script>
+
+</body>
+</html>
